@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox alignment="CENTER" prefHeight="234.0" prefWidth="432.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.demofinalproject.PatientController">
+
+    <children>
+        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="121.0" translateX="-132.0">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#viewDoctorNotes" text="View Doctor Notes" translateX="1.0" />
+            <Label fx:id="setDoctorNotes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Where Doctor notes go" translateX="104.0" visible="false" />
+            <Label fx:id="setDoctorMeds" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Where Medications Go" translateX="104.0" visible="false" />
+        </HBox>
+
+        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="227.0" translateX="-98.0" translateY="22.0">
+            <Button onAction="#viewMedications" text="See Medications" translateX="26.0" />
+        </HBox>
+
+        <Button mnemonicParsing="false" onAction="#makeAppointmentButtonClicked" text="Make Appointment" translateX="-134.0" translateY="26.0" />
+        <Button mnemonicParsing="false" onAction="#makePaymentButtonClicked" text="Make Payment" translateX="-134.0" translateY="17.0" />
+
+    </children>
+    <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+    </padding>
+    <Button text="Log out" onAction="#handleLogoutAction"/>
+</VBox>

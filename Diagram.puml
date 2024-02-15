@@ -1,0 +1,82 @@
+@startuml
+
+abstract class User {
+  -name: String
+  -occupation: String
+  -gender: String
+  -age: int
+  +getName(): String
+  +getOccupation(): String
+  +getGender(): String
+  +getAge(): int
+}
+
+class Patient {
+  -paymentInfo: String
+  -notes: String
+  -apt: String
+  -meds: ArrayList<String>
+  -reasonForVisit: String
+  +setPaymentInfo(paymentInfo: String): void
+  +viewNotes(): String
+  +addNotes(note: String): void
+  +makeApt(newApt: String): void
+  +getApt(): String
+  +addMed(medication: String): void
+  +removeMed(medication: String): void
+  +getMeds(): ArrayList<String>
+  +getReasonForVisit(): String
+}
+
+class Doctor {
+  -specialization: String
+  +Doctor(name: String, occupation: String, gender: String, age: int, specialization: String, password: String)
+}
+
+class PatientController {
+  +initialize(): void
+  +handleNotesButton(): void
+  +handleAptButton(): void
+  +handleMedsButton(): void
+  +handleLogin(): void
+  +handleLogout(): void
+}
+
+class DoctorController {
+  +initialize(): void
+  +handlePrescribeButton(): void
+  +handleAptNotesButton(): void
+  +handleLogin(): void
+  +handleLogout(): void
+}
+
+class Server {
+  +login(username: String, password: String): boolean
+  +addPatient(patient: Patient): void
+  +addDoctor(doctor: Doctor): void
+  +searchPatient(patientName: String): Patient
+  +updatePatientInfo(patient: Patient): void
+}
+
+class Client {
+'  +login(username: String, password: String): boolean
+'  +makeAppointment(patient: Patient, aptDetails: String): void
+'  +prescribeMeds(patient: Patient, meds: ArrayList<String>): void
+'  +viewPatientNotes(patient: Patient): String
++socketConnect(): boolean
++passToServer(String command): String
+}
+class Admin{
+
+}
+
+User <|-- Patient
+User <|-- Doctor
+User <|-- Admin
+'PatientController --|> Patient
+PatientController --|> Client
+'DoctorController --|> Doctor
+DoctorController --|> Client
+Client --|> Server
+
+@enduml

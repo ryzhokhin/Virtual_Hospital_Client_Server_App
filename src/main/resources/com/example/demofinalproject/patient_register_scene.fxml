@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox ?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.demofinalproject.PatientController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    <TextField fx:id="usernameField_reg" promptText="Username"/>
+    <PasswordField fx:id="passwordField_reg" promptText="Password"/>
+    <TextField fx:id="occupationField" promptText="Occupation"/>
+    <ChoiceBox fx:id="genderComboBox">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Male" />
+                <String fx:value="Female" />
+                <String fx:value="Prefer not to say" />
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+<TextField fx:id="ageField" promptText="Age"/>
+<TextField fx:id="reasonForVisitField" promptText="Reason for Visit"
+           /> <!-- Hide this field initially; it's for patients only -->
+<Button text="Submit" onAction="#handleRegisterAction"/>
+        </VBox>

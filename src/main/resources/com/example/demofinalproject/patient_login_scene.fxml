@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.layout.VBox?>
+<GridPane alignment="CENTER" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="com.example.demofinalproject.PatientController">
+
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    <Label text="Username:"/>
+    <TextField fx:id="usernameField" GridPane.columnIndex="1"/>
+    <Label text="Password:" GridPane.rowIndex="1"/>
+    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label fx:id="badCreds" text="Invalid login" textFill="red" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <Button text="Submit" onAction="#handleLoginAction" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    <Button text="Back" onAction="#handleLogoutAction" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+</GridPane>

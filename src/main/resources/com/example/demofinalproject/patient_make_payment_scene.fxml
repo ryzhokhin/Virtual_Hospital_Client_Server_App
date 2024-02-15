@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="334.0" prefWidth="238.0" spacing="5.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demofinalproject.PatientController">
+   <Label fx:id="pay1" prefHeight="44.0" prefWidth="181.0" text="Enter Payment Info">
+      <font>
+         <Font size="20.0" />
+      </font></Label>
+   <Label fx:id="pay2" text="Name of Card Holder" />
+   <TextField fx:id="cardHolder" promptText="John Smith" />
+   <Label fx:id="pay4" text="Card Number" />
+   <TextField fx:id="cardNumber" promptText="ex. 378282246310005" />
+   <Label fx:id="pay6" text="Expiration Date" />
+   <TextField fx:id="expDate" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="67.0" promptText="ex. 8/15" />
+   <Label fx:id="pay8" text="CVV" />
+   <TextField fx:id="cardCVV" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="54.0" promptText="ex. 233" />
+   <Button fx:id="paymentBtn" mnemonicParsing="false" onAction="#onActionPayment" text="Submit" translateX="73.0" translateY="10.0" />
+   <Label fx:id="success" text="PAYMENT SUCCESS" textAlignment="CENTER" translateX="18.0" translateY="-111.0" visible="false">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Label>
+   <Button fx:id="backToPatientFromPayment" mnemonicParsing="false" onAction="#onActionBackToPatient" prefHeight="25.0" prefWidth="53.0" text="Back" translateX="74.0" translateY="-45.0" visible="false" />
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>

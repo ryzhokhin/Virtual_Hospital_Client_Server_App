@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="495.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.demofinalproject.DoctorController">
+    <padding><Insets bottom="20" left="20" right="20" top="20" /></padding>
+
+    <HBox spacing="10">
+
+        <VBox maxWidth="-Infinity" prefHeight="137.0" prefWidth="157.0">
+            <Label text="Enter Patient Name" translateY="20.0" />
+            <TextField fx:id="searchPatientName" translateY="20.0" />
+            <Label text="Enter Patient Age" translateY="20.0" />
+            <TextField fx:id="searchPatientAge" translateY="20.0" />
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionSelectPatient" text="Select" translateX="172.0" translateY="-33.0" />
+        </VBox>
+
+        <Label text="Select Action" translateX="98.0" translateY="38.0" />
+        <ChoiceBox fx:id="selectDoctorAction" translateX="92.0" translateY="35.0">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Prescribe Meds" />
+                    <String fx:value="Write Notes" />
+                </FXCollections>
+            </items>
+        </ChoiceBox>
+
+    </HBox>
+
+    <HBox spacing="30" translateY="20.0">
+        <Label fx:id="patientInfoLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="157.0" prefWidth="178.0" text="Patient information" textAlignment="CENTER" />
+        <!-- make sure in DoctorController you say patientInfoLabel.setVisible(true); -->
+        <TextArea fx:id="patientInfoTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="129.0" prefWidth="200.0" translateX="26.0" wrapText="true" />
+    </HBox>
+    <Button alignment="BASELINE_RIGHT" onAction="#handleUpdateInfo" text="Submit" translateX="107.0" translateY="-22.0" />
+    <Button text="Log out" onAction="#handleLogoutAction"/>
+</VBox>
